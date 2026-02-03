@@ -3,7 +3,6 @@
 A Visual Studio Code extension that simplifies creating new Jekyll blog posts with proper frontmatter formatting and system-accurate timestamps using a dedicated panel.
 
 ![Demo of Jekyll Post Creator](https://raw.githubusercontent.com/nativvstudios/jekyll-post-creator/main/showcase.gif)
-*(Note: Demo GIF shows the previous command-based workflow. The current version uses a Webview panel.)*
 
 ## Features
 
