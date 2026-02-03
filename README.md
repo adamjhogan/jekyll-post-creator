@@ -37,7 +37,7 @@ After building from source:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/jekyll-post-creator.git
+   git clone https://github.com/nativvstudios/jekyll-post-creator.git
    cd jekyll-post-creator
    ```
 
