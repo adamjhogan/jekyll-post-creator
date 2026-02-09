@@ -2,9 +2,11 @@
   "name": "jekyll-post-creator",
   "displayName": "Jekyll Post Creator",
   "description": "Create Jekyll post markdown files with proper frontmatter formatting",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "license": "MIT",
+  "icon": "icon.png",
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
     "Other"
@@ -16,6 +18,10 @@
       {
         "command": "jekyll-post-creator.createPost",
         "title": "Jekyll: Create New Post"
+      },
+      {
+        "command": "jekyll-post-creator.showCreatorWindow",
+        "title": "Jekyll: Show Creator Window"
       }
     ],
     "menus": {
@@ -32,14 +38,18 @@
     "package": "vsce package",
     "publish": "vsce publish"
   },
+  "homepage": "https://github.com/nativvstudios/jekyll-post-creator#readme",
+  "bugs": {
+    "url": "https://github.com/nativvstudios/jekyll-post-creator/issues"
+  },
   "devDependencies": {
-    "@types/vscode": "^1.60.0",
-    "eslint": "^8.40.0",
-    "vsce": "^2.15.0"
+    "@types/vscode": "^1.74.0",
+    "@vscode/vsce": "^3.7.1",
+    "eslint": "^8.40.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/jekyll-post-creator"
+    "url": "https://github.com/nativvstudios/jekyll-post-creator"
   },
   "keywords": [
     "jekyll",
@@ -47,5 +57,5 @@
     "markdown",
     "post"
   ],
-  "publisher": "your-publisher-name"
+  "publisher": "nativvstudios"
 }

@@ -3,7 +3,6 @@
 A Visual Studio Code extension that simplifies creating new Jekyll blog posts with proper frontmatter formatting and system-accurate timestamps using a dedicated panel.
 
 ![Demo of Jekyll Post Creator](showcase.gif)
-*(Note: Demo GIF shows the previous command-based workflow. The current version uses a Webview panel.)*
 
 ## Features
 
@@ -25,20 +24,25 @@ A Visual Studio Code extension that simplifies creating new Jekyll blog posts wi
 
 ## Installation
 
-**Note: Currently, building from source is the only supported installation method.**
+### VS Code Marketplace
+
+1. Open VS Code
+2. Go to Extensions view (`Ctrl+Shift+X`)
+3. Search for **"Jekyll Post Creator"**
+4. Click **Install**
 
 ### Manual Installation from .vsix file
 
-After building from source:
-1. In VS Code, go to Extensions view (Ctrl+Shift+X)
-2. Click the "..." menu in the top-right of the Extensions view
-3. Select "Install from VSIX..." and choose the .vsix file you built
+1. Download the `.vsix` file from the [Releases](https://github.com/nativvstudios/jekyll-post-creator/releases) page
+2. In VS Code, go to Extensions view (`Ctrl+Shift+X`)
+3. Click the `...` menu in the top-right of the Extensions view
+4. Select **"Install from VSIX..."** and choose the downloaded file
 
-## Building From Source (Current Installation Method)
+### Building From Source
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/jekyll-post-creator.git
+   git clone https://github.com/nativvstudios/jekyll-post-creator.git
    cd jekyll-post-creator
    ```
 
@@ -50,11 +54,9 @@ After building from source:
 3. Package the extension:
    ```bash
    npm run package
-   # or directly use vsce
-   npx vsce package
    ```
 
-4. The packaged extension (.vsix file) will be created in the project root
+4. The packaged extension (`.vsix` file) will be created in the project root
 
 ## How to Use
 
@@ -92,7 +94,6 @@ tags: ["jekyll","markdown"]
 published: true
 ---
 
-<!-- Your content here -->
 ```
 
 ## Directory Handling
@@ -106,63 +107,5 @@ The extension will:
 
 ## Requirements
 
-- Visual Studio Code 1.60.0 or higher
+- Visual Studio Code 1.74.0 or higher
 
-## Extension Settings
-
-This extension doesn't add any VS Code settings currently.
-
-## Development
-
-### Project Structure
-
-```
-jekyll-post-creator/
-├── .vscode/           # VS Code settings
-│   └── launch.json    # Debug configuration
-├── images/            # Screenshots and demo GIFs
-├── webview/           # Files for the Webview UI
-│   ├── view.html      # HTML structure
-│   ├── style.css      # CSS rules
-│   └── main.js        # Client-side JavaScript
-├── .eslintrc.json     # ESLint configuration
-├── .gitignore         # Git ignore file
-├── extension.js       # Main extension code
-├── package.json       # Extension manifest
-├── README.md          # This file
-└── CHANGELOG.md       # Version changes
-```
-
-### Running in Development Mode
-
-1. Open the project in VS Code
-2. Press F5 to start debugging
-3. A new VS Code window will open with the extension loaded
-4. Test the extension in the new window
-
-### Debugging Workflow
-
-- **Backend Changes (`extension.js`):** To see changes in the main extension logic, you need to restart the debugger (Press `Ctrl+Shift+F5` or use the Restart button on the Debug toolbar) after saving your changes.
-- **Frontend Changes (`webview/view.html`, `webview/style.css`, `webview/main.js`):** While the debugger (F5) is running and your webview panel is open in the Extension Development Host window:
-    1. Save your changes in the webview file(s).
-    2. Switch to the Extension Development Host window.
-    3. Open the Command Palette (`Ctrl+Shift+P`).
-    4. Run the command `Developer: Reload Webviews`.
-    5. The panel will refresh instantly with your UI changes. (Alternatively, use `Developer: Open Webview Developer Tools` and refresh from there.)
-
-This allows for a much faster iteration cycle when designing the webview UI compared to restarting the full debugger.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-# Future structure might include:
-# ├── media/
-# │   ├── main.css     # Styles for the webview
-# │   └── main.js      # Script for the webview

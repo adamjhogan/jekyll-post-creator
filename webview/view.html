@@ -3,40 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <!-- Content Security Policy -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src {{cspSource}} 'nonce-{{nonce}}'; script-src 'nonce-{{nonce}}';"> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src {{cspSource}}; script-src 'nonce-{{nonce}}';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link to the CSS file -->
     <link href="{{styleUri}}" rel="stylesheet">
     <title>Create Jekyll Post</title>
 </head>
 <body>
-    <h1>Create New Jekyll Post</h1>
+    <div class="container">
+        <header class="header">
+            <div class="header-icon">J</div>
+            <div class="header-text">
+                <h1>New Jekyll Post</h1>
+                <p class="subtitle">Configure your post's front matter and create a new markdown file.</p>
+            </div>
+        </header>
 
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" required>
+        <section class="card">
+            <h2 class="card-title">Post Details</h2>
 
-    <label for="categories">Categories (space-separated):</label>
-    <input type="text" id="categories" name="categories">
+            <div class="form-group">
+                <label for="title">Title <span class="required">*</span></label>
+                <input type="text" id="title" name="title" placeholder="My Awesome Blog Post" required>
+                <span class="hint">The title for your blog post. This will also be used to generate the filename.</span>
+            </div>
 
-    <label for="tags">Tags (space-separated):</label>
-    <input type="text" id="tags" name="tags">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="categories">Categories</label>
+                    <input type="text" id="categories" name="categories" placeholder="e.g. tech tutorial">
+                    <span class="hint">Space-separated list of categories.</span>
+                </div>
 
-    <label for="layout">Layout:</label>
-    <select id="layout" name="layout">
-        <option value="post" selected>post</option>
-        <option value="page">page</option>
-        <option value="custom">custom</option>
-    </select>
+                <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <input type="text" id="tags" name="tags" placeholder="e.g. vscode jekyll">
+                    <span class="hint">Space-separated list of tags.</span>
+                </div>
+            </div>
 
-    <h2>Additional Options</h2>
-    <div id="customFieldsContainer"></div>
-    <button id="addOptionBtn" type="button">+ Add Option</button>
+            <div class="form-group">
+                <label for="layout">Layout</label>
+                <input type="text" id="layout" name="layout" placeholder="post" value="post">
+                <span class="hint">The Jekyll layout template to use (e.g. post, page, default).</span>
+            </div>
+        </section>
 
-    <hr>
+        <section class="card">
+            <div class="card-header">
+                <h2 class="card-title">Additional Options</h2>
+                <button id="addOptionBtn" type="button" title="Add custom field">+ Add Field</button>
+            </div>
+            <p class="card-description">Add custom front matter key-value pairs to your post.</p>
+            <div id="customFieldsContainer"></div>
+            <div id="emptyState" class="empty-state">
+                <span class="empty-icon">{ }</span>
+                <span>No custom fields yet. Click <strong>+ Add Field</strong> to add one.</span>
+            </div>
+        </section>
 
-    <button id="createBtn" type="button">Create Post</button>
+        <div class="actions">
+            <button id="createBtn" type="button">Create Post</button>
+        </div>
+    </div>
+
+    <div class="floating-preview" id="previewCard">
+        <button id="togglePreviewBtn" type="button" class="floating-preview-toggle" title="Toggle preview">Preview</button>
+        <div class="floating-preview-body" id="previewBody">
+            <pre id="previewContent" class="preview-content">---
+layout: post
+title: ""
+date: <span class="preview-placeholder">auto-generated</span>
+---</pre>
+        </div>
+    </div>
 
     <!-- Link to the JS file -->
     <script nonce="{{nonce}}" src="{{scriptUri}}"></script>
 </body>
-</html> 
+</html>
