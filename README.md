@@ -24,13 +24,6 @@ A Visual Studio Code extension that simplifies creating new Jekyll blog posts wi
 
 ## Installation
 
-### VS Code Marketplace
-
-1. Open VS Code
-2. Go to Extensions view (`Ctrl+Shift+X`)
-3. Search for **"Jekyll Post Creator"**
-4. Click **Install**
-
 ### Manual Installation from .vsix file
 
 1. Download the `.vsix` file from the [Releases](https://github.com/nativvstudios/jekyll-post-creator/releases) page
